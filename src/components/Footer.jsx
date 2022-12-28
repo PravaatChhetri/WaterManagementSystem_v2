@@ -1,4 +1,5 @@
 import React from 'react';
+import dhiLogo from '../assets/dhiLogo.png';
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -8,10 +9,23 @@ import {
 } from 'react-icons/fa';
 
 const Footer = () => {
+
+  const navItems=[
+    {id:1, name:'Home', href:'#',selected:true},
+    {id:2, name:'SCADA Display', href:'#',selected:false},
+    {id:3, name:'Valve Controller', href:'#',selected:false},
+    {id:4, name:'Water Flow Display', href:'#',selected:false},
+    {id:5, name:'Alarms and Events', href:'#',selected:false},
+    {id:6, name:'Events log', href:'#',selected:false},
+    {id:7, name:'Account', href:'#',selected:false}
+      ];
+
   return (
-    <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
-      <div>
-        <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
+    <div className=' mx-auto py-16 px-10 grid lg:grid-cols-4 gap-2 text-gray-300'>
+      <div className='ml-5'>
+        <h1 className='w-full text-3xl font-bold '>
+        <img className=' w-20' src={dhiLogo} alt='/' />
+        </h1>
         <p className='py-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit ullam iste repellat consequatur libero reiciendis, blanditiis accusantium.</p>
         <div className='flex justify-between md:w-[75%] my-6'>
             <FaFacebookSquare size={30} />
@@ -21,44 +35,24 @@ const Footer = () => {
             <FaDribbbleSquare size={30} />
         </div>
       </div>
-      <div className='lg:col-span-2 flex justify-between mt-6'>
-    <div>
-        <h6 className='font-medium text-gray-400'>Solutions</h6>
+      {/* <div className='lg:col-span-2 flex justify-between mt-6'> */}
+    <div className='sm:grid-cols-12 mx-auto my-3'>
+        <h4 className=' text-gray-400'>Nav Links</h4>
         <ul>
-            <li className='py-2 text-sm'>Analytics</li>
-            <li className='py-2 text-sm'>Marketing</li>
-            <li className='py-2 text-sm'>Commerce</li>
-            <li className='py-2 text-sm'>Insights</li>
+        {navItems.map((item) => (<li className='py-2 px-auto'>{item.name}</li>))}
         </ul>
     </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Support</h6>
-        <ul>
-            <li className='py-2 text-sm'>Pricing</li>
-            <li className='py-2 text-sm'>Documentation</li>
-            <li className='py-2 text-sm'>Guides</li>
-            <li className='py-2 text-sm'>API Status</li>
-        </ul>
+    <div className='sm:grid-cols-12 mx-auto text-lg my-10'>
+      < h4 className=' text-gray-400'>Contact Details</h4>
+      <p >Address: Thimphu TechPark, Thimphu, Bhutan</p>
+      <p >Email:dhiInfo@dhi.bt</p>
+      <p >Phone No: +975 17606060</p>
     </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Company</h6>
-        <ul>
-            <li className='py-2 text-sm'>About</li>
-            <li className='py-2 text-sm'>Blog</li>
-            <li className='py-2 text-sm'>Jobs</li>
-            <li className='py-2 text-sm'>Press</li>
-            <li className='py-2 text-sm'>Careers</li>
-        </ul>
+  
+    <div className='sm:grid-cols-12 mx-auto '>
+    <iframe title="gMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11699.3583210219!2d91.19877807218158!3d27.240270171929115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375eab9ff9094391%3A0xbf36fb609433862e!2sKuri%20Chu%20Beach!5e0!3m2!1sen!2sbt!4v1672169589197!5m2!1sen!2sbt" width="400" height="300" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Legal</h6>
-        <ul>
-            <li className='py-2 text-sm'>Claim</li>
-            <li className='py-2 text-sm'>Policy</li>
-            <li className='py-2 text-sm'>Terms</li>
-        </ul>
-    </div>
-      </div>
+      
     </div>
   );
 };
