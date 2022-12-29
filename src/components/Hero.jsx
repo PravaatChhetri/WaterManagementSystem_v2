@@ -1,33 +1,32 @@
 import React from 'react';
-import desupimg from '../assets/desup_warp.png';
+import Typed from 'react-typed';
 
 const Hero = () => {
   return (
     <div className='text-white z-0'>
       <div className=' mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
-        <img src={desupimg} className="z-0 absolute inset-x-0 top-0 w-full h-screen opacity-50" alt='unknown'/>
-        {/* <p className='text-[#00df9a] font-bold p-2'>
-          GROWING WITH DATA ANALYTICS
+        {/* <img src={desupimg} className="z-0 absolute inset-x-0 top-0 w-full h-screen opacity-50" alt='unknown'/> */}
+        <p className='text-[#5B8DF7] font-bold p-2'>
+          Getting Data Of Your Water
         </p>
         <h1 className='md:text-7xl sm:text-6xl text-4xl font-bold md:py-6'>
-          Grow with data.
+          How is water in your locality
         </h1>
         <div className='flex justify-center items-center'>
           <p className='md:text-5xl sm:text-4xl text-xl font-bold py-4'>
-            Fast, flexible financing for
+            Water information about
           </p>
           <Typed
           className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
-            strings={['BTB', 'BTC', 'SASS']}
-            typeSpeed={120}
-            backSpeed={140}
+            strings={['it\'s pH', 'water level']}
+            typeSpeed={200}
+            backSpeed={220}
             loop
           />
-        </div> */}
+        </div> 
 
-        {/* <p className='md:text-2xl text-xl font-bold text-gray-500'>Monitor your data analytics to increase revenue for BTB, BTC, & SASS platforms.</p>
-        <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>Get Started</button>
-      */}
+        <button className='bg-[#5B8DF7] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-white'>Get Started</button>
+     
       </div>
     </div>
   );

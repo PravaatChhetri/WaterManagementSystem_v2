@@ -1,10 +1,12 @@
 import React from 'react';
 import Analytics from './components/Analytics';
 import Cards from './components/Cards';
+import Partner from './components/Partner';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import Newsletter from './components/Newsletter';
+import BlankSpace from './components/BlankSpace';
+import TankLevel from './components/TankLevel';
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
       <Navbar />
       <Hero />
       <Analytics />
-      <Newsletter />
+      <BlankSpace />
       <Cards />
+      <TankLevel/>
+      <Partner />
       <Footer />
     </div>
   );

@@ -12,16 +12,12 @@ const Footer = () => {
 
   const navItems=[
     {id:1, name:'Home', href:'#',selected:true},
-    {id:2, name:'SCADA Display', href:'#',selected:false},
-    {id:3, name:'Valve Controller', href:'#',selected:false},
-    {id:4, name:'Water Flow Display', href:'#',selected:false},
-    {id:5, name:'Alarms and Events', href:'#',selected:false},
-    {id:6, name:'Events log', href:'#',selected:false},
-    {id:7, name:'Account', href:'#',selected:false}
+    {id:2, name:'Calender', href:'#',selected:false},
+    {id:3, name:'Alarms and Events', href:'#',selected:false},
       ];
 
   return (
-    <div className=' mx-auto py-16 px-10 grid lg:grid-cols-4 gap-2 text-gray-300'>
+    <div className=' mx-auto py-16 px-10 grid md:grid-cols-2 lg:grid-cols-4 gap-2 text-gray-300'>
       <div className='ml-5'>
         <h1 className='w-full text-3xl font-bold '>
         <img className=' w-20' src={dhiLogo} alt='/' />
@@ -36,7 +32,7 @@ const Footer = () => {
         </div>
       </div>
       {/* <div className='lg:col-span-2 flex justify-between mt-6'> */}
-    <div className='sm:grid-cols-12 mx-auto my-3'>
+    <div className='sm:grid-cols-12 mx-auto my-10'>
         <h4 className=' text-gray-400'>Nav Links</h4>
         <ul>
         {navItems.map((item) => (<li className='py-2 px-auto'>{item.name}</li>))}
