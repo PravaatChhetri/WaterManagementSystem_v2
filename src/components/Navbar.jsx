@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import dhiLogo from '../assets/dhiLogo.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navItems=[
-{id:1, name:'Home', href:'#',selected:true},
-{id:2, name:'Calender', href:'#',selected:false},
-{id:3, name:'Alarms and Events', href:'#',selected:false},
+{id:1, name:<Link to="/">Home</Link>, href:'#',selected:true},
+{id:2, name:<Link to="/calender">Calender</Link>, href:'#',selected:false},
+{id:3, name:<Link to="/alarms-and-events">Alarms and Events</Link>, href:'#',selected:false},
   ];
 
   const handleNav = () => {

@@ -1,24 +1,24 @@
 import React from 'react';
-import Analytics from './components/Analytics';
-import Cards from './components/Cards';
-import Partner from './components/Partner';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import BlankSpace from './components/BlankSpace';
-import TankLevel from './components/TankLevel';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import AlarmsAndEvents from './pages/AlarmsAndEvents';
+import Calender from './pages/Calender';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Analytics />
-      <BlankSpace />
-      <Cards />
-      <TankLevel/>
-      <Partner />
-      <Footer />
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/alarms-and-events" element={<AlarmsAndEvents/>}/>
+          <Route path="/calender" element={<Calender/>}/>
+          <Route path="*" element={<h1>You are Lost my dear</h1>}/>
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }

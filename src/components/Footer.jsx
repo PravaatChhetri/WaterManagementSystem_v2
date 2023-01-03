@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import dhiLogo from '../assets/dhiLogo.png';
 import {
   FaDribbbleSquare,
@@ -11,9 +12,9 @@ import {
 const Footer = () => {
 
   const navItems=[
-    {id:1, name:'Home', href:'#',selected:true},
-    {id:2, name:'Calender', href:'#',selected:false},
-    {id:3, name:'Alarms and Events', href:'#',selected:false},
+    {id:1, name:<Link to="/">Home</Link>, href:'#',selected:true},
+    {id:2, name:<Link to="/calender">Calender</Link>, href:'#',selected:false},
+    {id:3, name:<Link to="/alarms-and-events">Alarms and Events</Link>, href:'#',selected:false},
       ];
 
   return (
@@ -31,7 +32,6 @@ const Footer = () => {
             <FaDribbbleSquare size={30} />
         </div>
       </div>
-      {/* <div className='lg:col-span-2 flex justify-between mt-6'> */}
     <div className='sm:grid-cols-12 mx-auto my-10'>
         <h4 className=' text-gray-400'>Nav Links</h4>
         <ul>

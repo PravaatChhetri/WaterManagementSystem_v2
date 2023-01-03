@@ -5,7 +5,6 @@ const Hero = () => {
   return (
     <div className='text-white z-0'>
       <div className=' mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
-        {/* <img src={desupimg} className="z-0 absolute inset-x-0 top-0 w-full h-screen opacity-50" alt='unknown'/> */}
         <p className='text-[#5B8DF7] font-bold p-2'>
           Getting Data Of Your Water
         </p>

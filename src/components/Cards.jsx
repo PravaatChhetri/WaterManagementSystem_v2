@@ -5,11 +5,6 @@ const Cards = () => {
     <div className="w-full py-[10rem] px-4 bg-white">
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">
         <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-          {/* <img
-            className="w-20 mx-auto mt-[-3rem] bg-white"
-            src={Single}
-            alt="/"
-          /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -35,19 +30,12 @@ const Cards = () => {
               Data can be securely accessed by the community living in the
               locality
             </p>
-            {/* <p className="py-2 border-b mx-8">1 Granted User</p>
-            <p className="py-2 border-b mx-8">Send up to 2 GB</p> */}
+           
           </div>
-          {/* <button className="bg-[#1B3464] text-[#F7F9FF] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-            Start Trial
-          </button> */}
+          
         </div>
         <div className="w-full shadow-xl bg-gray-100 flex flex-col p-4 md:my-0 my-8 rounded-lg hover:scale-105 duration-300">
-          {/* <img
-            className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            src={Double}
-            alt="/"
-          /> */}
+         
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -69,16 +57,10 @@ const Cards = () => {
             <p className="py-2 mx-8 mt-8">Gives you exclusive access to the Events that have occurred in water management system</p>
 
           </div>
-          {/* <button className="bg-[#F7F9FF] text-[#1B3464] border-solid border-[#dcd8d8] border-2 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-            Start Trial
-          </button> */}
+          
         </div>
         <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-          {/* <img
-            className="w-20 mx-auto mt-[-3rem] bg-white"
-            src={Triple}
-            alt="/"
-          /> */}
+          
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -95,15 +77,9 @@ const Cards = () => {
           </svg>
 
           <h2 className="text-2xl font-bold text-center py-8">Alarms and Events</h2>
-          {/* <p className="text-center text-4xl font-bold">$149</p> */}
           <div className="text-center text-[#8c8c8c] mb-5 font-lg">
             <p className="py-2 mx-8 mt-8">Stay Updated with the issues that are occurring in water management system</p>
-            {/* <p className="py-2 border-b mx-8">1 Granted User</p>
-            <p className="py-2 border-b mx-8">Send up to 2 GB</p> */}
           </div>
-          {/* <button className="bg-[#1B3464] text-[#F7F9FF] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-            Start Trial
-          </button> */}
         </div>
       </div>
     </div>
