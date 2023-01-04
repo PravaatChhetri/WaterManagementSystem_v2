@@ -1,22 +1,35 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import AlarmsAndEvents from './pages/AlarmsAndEvents';
-import Calendar from './pages/Calendar';
+import EventLogHome from './pages/Calendar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dash from './pages/Dash';
 import PrivateRoutes from './utils/PrivateRoutes';
+import DashHome from './pages/DashHome';
+import SCADADisp from './pages/SCADADisp';
+import ValveController from './pages/ValveController'; 
+import AlarmEvents from './pages/AlarmEvents';
+import EventLog from './pages/EventLog';
+import WaterFlowDisplay from './pages/WaterFlowDisplay';
+import ResponsiveDrawer from './components/DashboardDrawer';
+
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/alarms-and-events" element={<AlarmsAndEvents/>}/>
-          <Route path="/calender" element={<Calendar/>}/>
+          <Route path="/event-log" element={<EventLogHome/>}/>
+          <Route path="/DashBoard" element={<DashHome/>}/>
+          <Route path="/DashBoard/SCADA-Display" element={<SCADADisp/>}/>
+          <Route path="/DashBoard/Water-Flow-Display" element={<WaterFlowDisplay/>}/>
+          <Route path="/DashBoard/Valve-Controller" element={<ValveController/>}/>
+          <Route path="/DashBoard/Alarms-and-Events" element={<AlarmEvents/>}/>
+          <Route path="/DashBoard/Event-Log" element={<EventLog/>}/>
+          <Route path="/DashBoard/Log-Out" element={<ResponsiveDrawer box={<h1 className="text-center">Log Out</h1>}/>}/>
+
           
           
           
@@ -30,7 +43,6 @@ function App() {
          
           <Route path="*" element={<h1>You are Lost my dear</h1>}/>
         </Routes>
-        <Footer />
       </Router>
     </div>
   );
