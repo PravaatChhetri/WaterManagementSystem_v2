@@ -17,6 +17,7 @@ import Typography from "@mui/material/Typography";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import HomeIcon from "@mui/icons-material/Home";
 import SpeedIcon from "@mui/icons-material/Speed";
+import TimelineIcon from '@mui/icons-material/Timeline';
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import PersonIcon from "@mui/icons-material/Person";
 import ScienceIcon from "@mui/icons-material/Science";
@@ -39,7 +40,7 @@ export const ResponsiveDrawer = (props) => {
     <SpeedIcon />,
     <ScienceIcon />,
     <NotificationsActiveIcon />,
-    <NotificationsActiveIcon />,
+    <TimelineIcon />,
     <PersonIcon />,
   ];
   //state used for changing light and dark mode
@@ -111,8 +112,8 @@ export const ResponsiveDrawer = (props) => {
       </List>
       <List>
         <ListItem sx={{ mt: 15 }}>
-          <ListItemButton>
-            <IconButton sx={{ ml: 10 }} onClick={setViewMode} color="inherit">
+          <ListItemButton onClick={setViewMode}>
+            <IconButton sx={{ ml: 10 }} color="inherit">
               {mode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
           </ListItemButton>

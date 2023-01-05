@@ -3,8 +3,6 @@ import Home from './pages/Home';
 import AlarmsAndEvents from './pages/AlarmsAndEvents';
 import EventLogHome from './pages/Calendar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dash from './pages/Dash';
-import PrivateRoutes from './utils/PrivateRoutes';
 import DashHome from './pages/DashHome';
 import SCADADisp from './pages/SCADADisp';
 import ValveController from './pages/ValveController'; 
@@ -31,13 +29,7 @@ function App() {
           <Route path="/DashBoard/Log-Out" element={<ResponsiveDrawer box={<h1 className="text-center">Log Out</h1>}/>}/>
 
           
-          
-          
-          <Route element={<PrivateRoutes />}>
-                <Route element={<Dash/>} path="/dash" exact/>
-            </Route>
-         
-         {/* <Route path="/dash" element={<Dash/>}/> */}
+  
          
          
          
