@@ -1,46 +1,55 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import AlarmsAndEvents from './pages/AlarmsAndEvents';
-import Calendar from './pages/Calendar';
+import EventLogHome from './pages/Calendar';
 import LoginPage from './components/Login/Login';
 // import SignupPage from './pages/Signup';
 import { useState } from 'react';
 import Protected from './components/Protected';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dash from './pages/Dash';
+import PrivateRoutes from './utils/PrivateRoutes';
+import DashHome from './pages/DashHome';
+import SCADADisp from './pages/SCADADisp';
+import ValveController from './pages/ValveController'; 
+import AlarmEvents from './pages/AlarmEvents';
+import EventLog from './pages/EventLog';
+import LoginPage from './pages/Login'
+import WaterFlowDisplay from './pages/WaterFlowDisplay';
+import ResponsiveDrawer from './components/DashboardDrawer';
+
 
 function App() {
-  const [isLoggedIn, setisLoggedIn] = useState(null);
-  const logIn = () => {
-    setisLoggedIn(true);
-  };
-  const logOut =() => {
-    setisLoggedIn(false);
-  };
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        {isLoggedIn ? (
-          <button onClick={logOut}>Logout</button>
-        ) : (
-          <button onClick={logIn}>Login</button>
-        )}
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/alarms-and-events" element={<AlarmsAndEvents/>}/>
-          <Route path="/calendar" element={ 
-          <Protected isLoggedIn = {isLoggedIn}>
-                  <Calendar/>
-          </Protected>
-          }/>
-          <Route path="/login" element={<LoginPage/>} />
-          {/* <Route path="/signup" element={<SignupPage/>} /> */}
+          <Route path="/event-log" element={<EventLogHome/>}/>
+          <Route path="/Login" element={<LoginPage/>}/>
+          <Route path="/DashBoard" element={<DashHome/>}/>
+          <Route path="/DashBoard/SCADA-Display" element={<SCADADisp/>}/>
+          <Route path="/DashBoard/Water-Flow-Display" element={<WaterFlowDisplay/>}/>
+          <Route path="/DashBoard/Valve-Controller" element={<ValveController/>}/>
+          <Route path="/DashBoard/Alarms-and-Events" element={<AlarmEvents/>}/>
+          <Route path="/DashBoard/Event-Log" element={<EventLog/>}/>
+          <Route path="/DashBoard/Log-Out" element={<ResponsiveDrawer box={<h1 className="text-center">Log Out</h1>}/>}/>
+
+          
+          
+          
+          <Route element={<PrivateRoutes />}>
+                <Route element={<Dash/>} path="/dash" exact/>
+            </Route>
+         
+         {/* <Route path="/dash" element={<Dash/>}/> */}
+         
+         
+         
           <Route path="*" element={<h1>You are Lost my dear</h1>}/>
         </Routes>
-        <Footer />
       </Router>
     </div>
   );
