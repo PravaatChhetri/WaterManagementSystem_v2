@@ -5,3 +5,12 @@
 body {
   background-color: #000300;
 }
+
+.site-card-wrapper {
+  padding: 30px;
+  background: #020202;
+}
+
+[data-theme="dark"] .site-card-wrapper {
+  background: #ffffff;
+}
