@@ -4,6 +4,7 @@ import rGlogo from "../assets/rgob.png";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
+import {Tank1, Tank2}  from "./TankLevel";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -40,13 +41,18 @@ export const Header = (props) => {
 
 
 // Dash Home page components
-export const TankLevel=(props)=>{
+export const TankLevelComp=(props)=>{
 
 return(
   <Grid item xs={12} lg={4}>
   <Item>
     <div className={HomeContainer}>
       <b>Tank Water Level (Meters)</b>
+      <div className="mx-auto justify-around my-5 w-auto lg:flex sm:grid rounded-md sm:h-auto">
+
+      <Tank1 height={200} width={200} />
+      <Tank2 height={200} width={200}/>
+      </div>
     </div>
   </Item>
 </Grid>
@@ -80,7 +86,7 @@ export const ValveController=(props)=>{
 
 export const WaterQuality=(props)=>{
   return(
-    <Grid item xs={12} lg={3}>
+    <Grid item xs={12} lg={6}>
       <Item>
         <div className={HomeContainer}>
           <b>Water Quality</b>

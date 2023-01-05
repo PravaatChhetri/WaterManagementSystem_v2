@@ -6,10 +6,11 @@ import dhiLogo from '../assets/dhiLogo.png';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navItems=[
-{id:1, name:<Link to="/">Home</Link>, href:'#',selected:true},
-{id:2, name:<Link to="/event-log">EventLog</Link>, href:'#',selected:false},
-{id:3, name:<Link to="/alarms-and-events">Alarms and Events</Link>, href:'#',selected:false},
-{id:4, name:<Link to="/login">Login</Link>, href:'#',selected:false},
+{id:1, name:<Link to="/">Home</Link>,selected:true},
+{id:2, name:<Link to="/login">Login</Link>,selected:false},
+{id:3, name:<a href="#blankSpace" >Water Quality</a>,selected:false},
+{id:3, name:<a href="#tankLevel" >Tank Level</a>,selected:false},
+
   ];
 
   const handleNav = () => {

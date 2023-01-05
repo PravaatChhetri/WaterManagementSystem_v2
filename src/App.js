@@ -1,7 +1,5 @@
 import React from 'react';
 import Home from './pages/Home';
-import AlarmsAndEvents from './pages/AlarmsAndEvents';
-import EventLogHome from './pages/Calendar';
 import Login from './pages/Login';
 // import SignupPage from './pages/Signup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -14,16 +12,16 @@ import WaterFlowDisplay from './pages/WaterFlowDisplay';
 import ResponsiveDrawer from './components/DashboardDrawer';
 
 
-function App() {
 
+function App() {
+  
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/alarms-and-events" element={<AlarmsAndEvents/>}/>
-          <Route path="/event-log" element={<EventLogHome/>}/>
           <Route path="/login" element={<Login/>}/>
+          
 
           <Route path="/DashBoard" element={<DashHome/>}/>
           <Route path="/DashBoard/SCADA-Display" element={<SCADADisp/>}/>
