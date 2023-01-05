@@ -2,10 +2,8 @@ import React from 'react';
 import Home from './pages/Home';
 import AlarmsAndEvents from './pages/AlarmsAndEvents';
 import EventLogHome from './pages/Calendar';
-import LoginPage from './components/Login/Login';
+import Login from './pages/Login';
 // import SignupPage from './pages/Signup';
-import { useState } from 'react';
-import Protected from './components/Protected';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dash from './pages/Dash';
 import PrivateRoutes from './utils/PrivateRoutes';
@@ -14,7 +12,6 @@ import SCADADisp from './pages/SCADADisp';
 import ValveController from './pages/ValveController'; 
 import AlarmEvents from './pages/AlarmEvents';
 import EventLog from './pages/EventLog';
-import LoginPage from './pages/Login'
 import WaterFlowDisplay from './pages/WaterFlowDisplay';
 import ResponsiveDrawer from './components/DashboardDrawer';
 
@@ -28,7 +25,8 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/alarms-and-events" element={<AlarmsAndEvents/>}/>
           <Route path="/event-log" element={<EventLogHome/>}/>
-          <Route path="/Login" element={<LoginPage/>}/>
+          <Route path="/login" element={<Login/>}/>
+
           <Route path="/DashBoard" element={<DashHome/>}/>
           <Route path="/DashBoard/SCADA-Display" element={<SCADADisp/>}/>
           <Route path="/DashBoard/Water-Flow-Display" element={<WaterFlowDisplay/>}/>
