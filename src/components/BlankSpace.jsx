@@ -3,7 +3,7 @@ import '../index.css';
 
 function BlankSpace() {
   const header=['TDS','pH', 'Tubidity'];
-  const data=['10','7.45','100'];
+  const data=['34','7.45','100'];
   return (
    
     <div className="site-card-wrapper w-full">
