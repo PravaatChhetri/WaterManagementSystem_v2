@@ -23,6 +23,7 @@ const initialNodes =[
         data:{label:'Source'},
         type:'input',
         position:{x:260, y:10},
+        draggable: false,
     },
     {
         id:'v1-fr',
@@ -36,8 +37,9 @@ const initialNodes =[
             width:60,
             height:20
           },
-          sourcePosition: 'right',
-          targetPosition: 'left',
+        sourcePosition: 'right',
+        targetPosition: 'left',
+        draggable: false,
     },
     {
         id:'FT-fr',
@@ -51,8 +53,9 @@ const initialNodes =[
             width:60,
             height:20
           },
-          sourcePosition: 'left',
-          targetPosition: 'right',
+        sourcePosition: 'left',
+        targetPosition: 'right',
+        draggable: false,
     },
     {
         id:'v1',
@@ -65,6 +68,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+        draggable: false,
     },
     {
         id:'FT',
@@ -73,7 +77,7 @@ const initialNodes =[
         type:'default',
         position:{x:240, y:200},
         style: { backgroundColor: '#FFFFFF', width: 175, height: 90 },
-        
+        draggable: false,
     },
     {
         id:'ph',
@@ -81,7 +85,9 @@ const initialNodes =[
         type:'default',
         position:{x:12, y:35},
         parentNode: 'FT',
-        
+        sourcePosition: 'top',
+        targetPosition: 'bottom',
+        draggable: false,
     },
     {
         id:'royal',
@@ -89,7 +95,7 @@ const initialNodes =[
         data:{label:'Royal'},
         type:'default',
         position:{x:2, y:335},
-        
+        draggable: false,
     },
     {
         id:'v4-fr',
@@ -103,7 +109,7 @@ const initialNodes =[
             width:60,
             height:20
           },
-          
+        draggable: false, 
     },
     {
         id:'v4',
@@ -116,6 +122,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+        draggable: false,
     },
     {
         id:'v2-fr',
@@ -129,7 +136,8 @@ const initialNodes =[
             width:60,
             height:20
           },
-          targetPosition: 'left',
+        targetPosition: 'left',
+        draggable: false,
     },
     {
         id:'v3-fr',
@@ -143,7 +151,8 @@ const initialNodes =[
             width:60,
             height:20
           },
-          targetPosition: 'right',
+        targetPosition: 'right',
+        draggable: false,
     },
     {
         id:'v2',
@@ -156,6 +165,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+        draggable: false,
     },
     {
         id:'v3',
@@ -168,6 +178,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+        draggable: false,  
     },
     {
         id:'r2',
@@ -175,6 +186,7 @@ const initialNodes =[
         data:{label:'Reservior2'},
         type:'default',
         position:{x:245, y:455},
+        draggable: false, 
     },
     {
         id:'r2-fr',
@@ -188,6 +200,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+        draggable: false,   
     },
     {
         id:'v5',
@@ -200,6 +213,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+        draggable: false,  
     },
     {
         id:'v6-fr',
@@ -214,7 +228,8 @@ const initialNodes =[
             height:20
           },
           targetPosition:'right',
-          sourcePosition:'left'
+          sourcePosition:'left',
+          draggable: false,
     },
     {
         id:'v7-fr',
@@ -228,6 +243,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+          draggable: false,
     },
     {
         id:'v8-fr',
@@ -241,6 +257,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+          draggable: false,
     },
     {
         id:'v9-fr',
@@ -255,7 +272,8 @@ const initialNodes =[
             height:20
           },
           targetPosition:'left',
-          sourcePosition:'right'
+          sourcePosition:'right',
+          draggable: false,
     },
     {
         id:'v6',
@@ -264,11 +282,13 @@ const initialNodes =[
         type:'output',
         position:{x:53, y:620},
         style: {
+          
             padding: 5,
             width:50,
             height:35
           },
         targetPosition: 'right',
+        draggable: false,
     },
     {
         id:'v7',
@@ -281,6 +301,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+          draggable: false,
     },
     {
         id:'v8',
@@ -293,6 +314,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+          draggable: false,
     },
     {
         id:'v9',
@@ -307,6 +329,7 @@ const initialNodes =[
           },
         sourcePosition: 'right',
         targetPosition: 'left',
+        draggable: false,
     },
     {
         id:'v10-fr',
@@ -320,6 +343,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+          draggable: false,
     },
     {
         id:'v11-fr',
@@ -333,6 +357,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+          draggable: false,
     },
     {
         id:'v10',
@@ -345,6 +370,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+          draggable: false,
     },
     {
         id:'v10-v11-fr',
@@ -360,6 +386,7 @@ const initialNodes =[
           },
           sourcePosition: 'right',
           targetPosition: 'left',
+          draggable: false,
     },
     {
         id:'v11',
@@ -372,6 +399,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+        draggable: false,
     },
     {
         id:'v11-v12-fr',
@@ -387,6 +415,7 @@ const initialNodes =[
           },
           sourcePosition: 'right',
           targetPosition: 'left',
+          draggable: false,
     },
     {
         id:'v12-fr',
@@ -400,6 +429,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+          draggable: false,
     },
     {
         id:'v12',
@@ -412,6 +442,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+          draggable: false,
     },
     {
         id:'v13-fr',
@@ -427,6 +458,7 @@ const initialNodes =[
           },
           sourcePosition: 'right',
           targetPosition: 'left',
+          draggable: false,
     },
     {
         id:'v13',
@@ -441,6 +473,7 @@ const initialNodes =[
           },
         targetPosition: 'left',
         sourcePosition: 'right',
+        draggable: false,
     },
     {
         id:'v14-fr',
@@ -454,6 +487,7 @@ const initialNodes =[
             width:60,
             height:20
           },
+          draggable: false,
     },
     {
         id:'v15-fr',
@@ -469,6 +503,7 @@ const initialNodes =[
           },
           sourcePosition: 'right',
           targetPosition: 'left',
+          draggable: false,
     },
     {
         id:'v14',
@@ -481,6 +516,7 @@ const initialNodes =[
             width:50,
             height:35
           },
+          draggable: false,
     },
     {
         id:'v15',
@@ -494,9 +530,9 @@ const initialNodes =[
             height:35
           },
         targetPosition: 'left',
+        draggable: false,
     }
 ];
-
 const initialEdges = [
     {
         id:'s-v1-fr',
@@ -532,6 +568,20 @@ const initialEdges = [
         target:'FT',
         type:'smoothstep',
         animated: true
+    },
+    {
+      id:'FT-ph-1',
+      source: 'FT',
+      target:'ph',
+      type:'straight',
+      animated: true
+    },
+    {
+      id:'FT-ph-2',
+      source: 'ph',
+      target:'FT',
+      type:'straight',
+      animated: true
     },
     {
         id:'FT-r',
@@ -597,11 +647,17 @@ const initialEdges = [
         animated: true
     },
     {
+      id:'r2-v5-fr',
+      source: 'r2',
+      target:'r2-fr',
+      type:'straight',
+      animated: true
+  },
+    {
         id:'r2-v5',
-        source: 'r2',
+        source: 'r2-fr',
         target:'v5',
         type:'straight',
-        label:'r2 to V5',
         animated: true
     },
     {
@@ -760,15 +816,15 @@ const initialEdges = [
     },
     
 ];
-
-
 const rfStyle = {
     backgroundColor: '#eef0f2',
   };
 
+  
+
 const SCADADisp = () => {
   const ScadaDispContent = (
-    <div style={{ height: '80vh', width:'100%' }}>
+    <div style={{ height: '80vh', width:'100%'}}>
     <ReactFlow
     defaultEdges={initialEdges}
     defaultNodes={initialNodes}

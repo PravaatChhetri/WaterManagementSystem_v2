@@ -3,19 +3,17 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "../index.css";
 import ResponsiveDrawer from "../components/DashboardDrawer";
-import { FlowRateDisplay, TankLevel, ValveController, WaterQuality, AlarmsAndEvents as AandE } from "../components/HomePageComp";
-
+import { FlowRateDisplay, TankLevelComp, ValveController, WaterQuality} from "../components/HomePageComp";
 
 
 const homePageContent=(
   <Box sx={{ flexGrow: 1 }}>
   <Grid container spacing={2}>
    
-  <TankLevel/>
+  <TankLevelComp/>
   <FlowRateDisplay/>  
   <ValveController/>  
   <WaterQuality/>  
-  <AandE/>  
     
   </Grid>
 </Box>
