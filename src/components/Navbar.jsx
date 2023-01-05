@@ -9,6 +9,7 @@ const Navbar = () => {
 {id:1, name:<Link to="/">Home</Link>, href:'#',selected:true},
 {id:2, name:<Link to="/event-log">EventLog</Link>, href:'#',selected:false},
 {id:3, name:<Link to="/alarms-and-events">Alarms and Events</Link>, href:'#',selected:false},
+{id:4, name:<Link to="/login">Login</Link>, href:'#',selected:false},
   ];
 
   const handleNav = () => {
