@@ -19,7 +19,7 @@ import ResponsiveDrawer from './components/DashboardDrawer';
 function App() {
 
   return (
-    <div className="App">
+    <>
       <Router>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -49,7 +49,7 @@ function App() {
           <Route path="*" element={<h1>You are Lost my dear</h1>}/>
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 
