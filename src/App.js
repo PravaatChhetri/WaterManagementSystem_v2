@@ -5,7 +5,6 @@ import EventLogHome from './pages/Calendar';
 import Login from './pages/Login';
 // import SignupPage from './pages/Signup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dash from './pages/Dash';
 import PrivateRoutes from './utils/PrivateRoutes';
 import DashHome from './pages/DashHome';
 import SCADADisp from './pages/SCADADisp';
@@ -38,9 +37,9 @@ function App() {
           
           
           
-          <Route element={<PrivateRoutes />}>
+          {/* <Route element={<PrivateRoutes />}>
                 <Route element={<Dash/>} path="/dash" exact/>
-            </Route>
+            </Route> */}
          
          {/* <Route path="/dash" element={<Dash/>}/> */}
          

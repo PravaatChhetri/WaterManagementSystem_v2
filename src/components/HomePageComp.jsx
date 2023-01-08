@@ -4,7 +4,9 @@ import rGlogo from "../assets/rgob.png";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
+import { Col, Row,Card } from "antd";
 
+import { Column, Liquid } from "@ant-design/plots";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -40,53 +42,176 @@ export const Header = (props) => {
 
 
 // Dash Home page components
-export const TankLevel=(props)=>{
+export const TankLevel=({data})=>{
 
 return(
-  <Grid item xs={12} lg={4}>
-  <Item>
-    <div className={HomeContainer}>
-      <b>Tank Water Level (Meters)</b>
+  <div style={{ textAlign: "center" }}>
+      <Row >
+        <Col span={4}>
+         
+        </Col>
+
+        <Col span={24}>
+            <Row>
+              {data.map((val, i) => {
+                return (
+                  <Col key={i} span={12}>
+                    <Liquid
+                      {...{
+                        percent: val.level  / 10,
+                        outline: {
+                          border: 3,
+                          distance: 3,
+                        },
+                        width: 200,
+                        height: 200,
+                        wave: {
+                          length: 225,
+                        },
+                      }}
+                    />
+                    <p className="sub_title">{val.level_name}</p>
+                  </Col>
+                );
+              })}
+            </Row>
+        </Col>
+      </Row>
     </div>
-  </Item>
-</Grid>
 );
 }
 
-export const FlowRateDisplay=(props)=>{
+export const FlowRateDisplay=({data})=>{
   return(
-    <Grid item xs={12} lg={8}>
-      <Item>
-        <div className={HomeContainer}>
-        <b>Flow Rate Display(m<sup>3</sup>/hour)</b>
+    <div style={{ }}>
+    <Row>
+    
+    
+      {data.map((val, i) => {
+        return (
+          <Col key={i} span={5}>
+            <Row >
+              
 
-        </div>
-      </Item>
-    </Grid>
+            <Card
+    hoverable
+    style={{
+      backgroundColor: val.flow_rate < 5 ? "#e31305" : "#55c704",
+
+      width: 130,
+
+      borderRadius:15,
+      margin:3
+    }}
+
+  >
+
+              <Col span={1}>
+                <p className="sub_title" style={{ fontWeight: "bold", color:"white" }}>{val.flow_name}</p>
+              </Col>
+              <Col span={1}>
+                <Row >
+                  <Col span={1}>
+                    <p style={{ fontWeight: "bold", color:"white" }}>{val.flow_rate}</p>
+                  </Col>
+                 
+                </Row>
+              
+              </Col>
+
+</Card>
+            
+            
+            </Row>
+          </Col>
+        );
+      })}
+    </Row>
+  </div>
   );
 }
 
-export const ValveController=(props)=>{
+export const ValveController=({data})=>{
     return(
-      <Grid item xs={12} lg={6}>
-      <Item>
-        <div className={HomeContainer}>
-          <b>Valve Position</b>
-        </div>
-      </Item>
-    </Grid>
+      <div style={{ padding: 10 }}>
+      <Row justify="start">
+        {data.map((val, i) => {
+          return (
+            <Col key={i} span={6}>
+                
+                <Card 
+                hoverable
+                style={{
+                  backgroundColor:  "#10b4eb",
+          
+                  width: 130,
+          
+                  borderRadius:15,
+                  margin:3
+                }}
+                >
+
+                
+                <Col justify="center">
+                  <p className="sub_title" style={{ fontWeight: "bold", color:"white" }}>{val.flow_name}</p>
+                </Col>
+                <Col >
+                  <Row justify="center">
+                    <Col >
+                      <p style={{ fontWeight: "bold", color:"white" }}>{val.valve_position}</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
     );
 }
 
-export const WaterQuality=(props)=>{
+export const WaterQuality=({data})=>{
   return(
-    <Grid item xs={12} lg={3}>
-      <Item>
-        <div className={HomeContainer}>
-          <b>Water Quality</b>
-        </div>
-      </Item>
-    </Grid>
+    <div>
+    <Row justify="start" gutter={[10, 0]}>
+      {data.map((val, i) => {
+        return (
+          <Col span={24} key={i}>
+            <Row justify="center">
+
+
+<Card 
+              hoverable
+              style={{
+                backgroundColor:  "#10b4eb",
+        
+                width: 130,
+                 height:85,   
+                borderRadius:15,
+                margin:3
+              }}
+              >
+
+              
+              <Col justify="center">
+                <p className="sub_title" style={{  color:"white" }}>{val.Quality_name}</p>
+              </Col>
+              <Col >
+                <Row justify="center">
+                  <Col >
+                    <p style={{  color:"white",  }}>{val.value}</p>
+                  </Col>
+                </Row>
+              </Col>
+            </Card>
+             
+            </Row>
+          </Col>
+        );
+      })}
+    </Row>
+  </div>
   );
 }
 export const AlarmsAndEvents=(props)=>{
