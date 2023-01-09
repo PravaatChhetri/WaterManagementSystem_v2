@@ -204,7 +204,12 @@ const EventLogFetch = () => {
         </Select>
 
         <PickWithType value={date} onChange={getDate} ></PickWithType>
-        <Button type="primary" onClick={senddata}>Fetch</Button>
+        <Button 
+        
+        type="button" class=" py-1 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-16 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+        
+        
+        onClick={senddata}>Fetch</Button>
         <Column {...config}></Column>
       </Card>
 
