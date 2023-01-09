@@ -831,7 +831,7 @@ const SCADADisp = () => {
     style={rfStyle}
     fitView
     > 
-    <MiniMap nodeColor={nodeColor} position = {('top-left')} /> 
+    {/* <MiniMap nodeColor={nodeColor} position = {('top-left')} />  */}
     <Controls />
     <Background variant={'line'} />
     <Panel position="top-right">
