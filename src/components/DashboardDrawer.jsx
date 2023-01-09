@@ -195,7 +195,10 @@ export const ResponsiveDrawer = (props) => {
           sx={{
             mt: { sm:16 },
             flexGrow: 1,
-            p: 3,
+            pt: 3,
+            pr:3,
+            pb:3,
+            pl:9,
             width: { sm: `calc(100% - ${drawerWidth}px)` },
           }}
         >
