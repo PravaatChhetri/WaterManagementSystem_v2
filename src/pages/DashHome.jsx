@@ -33,13 +33,13 @@ export default function DashHome() {
   const [qualityStatusData, setQualityStatusData] = useState([]);
 
   const homePageContent=(
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, mt:{xs:10,sm:0, md:0},pl:9 }}>
     <Grid container spacing={2}>   
     <TankLevel data={TankData}/>
+    <WaterQuality data={qualityStatusData}/>  
     <FlowRateDisplay data={FlowRateData}/>  
     <ValveController data={ValveStatusData}/>  
-    <WaterQuality data={qualityStatusData}/>  
-    <AandE/>  
+    
       
     </Grid>
   </Box>
