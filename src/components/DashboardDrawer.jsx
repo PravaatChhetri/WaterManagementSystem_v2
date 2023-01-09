@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -23,8 +22,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import ScienceIcon from "@mui/icons-material/Science";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Header } from "./HomePageComp";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { Link } from "react-router-dom";
 
 
@@ -45,21 +42,17 @@ export const ResponsiveDrawer = (props) => {
     <PersonIcon />,
   ];
   //state used for changing light and dark mode
-  const [mode, setMode] = useState(true);
-
-  //defining the dark and light mode theme
+ //defining the dark and light mode theme
   const darkTheme = createTheme({
     palette: {
-      mode: mode ? "light" : "dark",
+      mode:"light", 
       primary: {
         main: "#fff",
       },
     },
   });
 
-  const setViewMode = () => {
-    setMode(!mode);
-  };
+  
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -111,15 +104,7 @@ export const ResponsiveDrawer = (props) => {
           </ListItem>
         ))}
       </List>
-      <List>
-        <ListItem sx={{ mt: 15 }}>
-          <ListItemButton onClick={setViewMode}>
-            <IconButton sx={{ ml: 10 }} color="inherit">
-              {mode ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </ListItemButton>
-        </ListItem>
-      </List>
+   
     </div>
   );
 
@@ -198,7 +183,7 @@ export const ResponsiveDrawer = (props) => {
             pt: 3,
             pr:3,
             pb:3,
-            pl:9,
+            pl:3,
             width: { sm: `calc(100% - ${drawerWidth}px)` },
           }}
         >
