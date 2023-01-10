@@ -113,10 +113,19 @@ const AlarmEvents = () => {
       render: (_, record) => (
         <>
           {record.flow_rate_diff > 0 ? (
-            <div className="on">Okey</div>
+
+<button type="button" class="py-2 px-4 flex justify-center items-center  bg-green-600 hover:bg-greed-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  w-12 md:w-24 h-12 rounded-lg ">
+   No Loss
+</button>
+
+            // <div className="on bg-green-400 h-full">No Loss</div>
           ) : (
-            <div className="off">Defunct</div>
-          )}
+<button type="button" class="py-2 px-4 flex justify-center items-center  bg-red-600 hover:bg-red-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  w-12 md:w-24 h-12 rounded-lg ">
+   Loss
+</button>         
+
+
+)}
         </>
       ),
     },
@@ -125,11 +134,13 @@ const AlarmEvents = () => {
 
   const alarmEventContent = (
     <Card
-    style={{
-      borderRadius: 16,
-      padding: 12,
-      minHeight: 330,
-    }}
+    // style={{
+    //   borderRadius: 16,
+    //   padding: 12,
+    //   minHeight: 330,
+    // }}
+
+    class="py-4 md:mt-2 mt-10"
   >
     <p className="title">Water Loss</p>
     <Table bordered dataSource={Data} pagination={{ pageSize: 5 }} columns={column} />

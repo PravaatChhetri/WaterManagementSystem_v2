@@ -38,6 +38,7 @@ const EventLogFetch = () => {
   const [secondSensor, setSecondSensor] = useState(eachSensorData[sensorData[0]][0]);
   const [sensorType, setSensorType] = useState('FlowMeter');
   const [yField, setYField] = useState('flow_rate');
+  const [dataload,setDataLoad] = useState(false)
 
   const eventLogContent = <div></div>;
 
@@ -89,12 +90,17 @@ const EventLogFetch = () => {
 
 
   async function senddata() {
+
     try {
+
+      setDataLoad(true)
 
       if (sensorType === 'FlowMeter') {
         if (period === "anyday") {
           let response = await getDailyData({ date, secondSensor});
-          console.log(response.result)
+          // console.log(response.result)
+          setDataLoad(false)
+
           setData(response.result)
           return response.result
           // let filterdata = response.result.filter((val) => {
@@ -104,7 +110,8 @@ const EventLogFetch = () => {
 
         } else if (period === "month") {
           let response = await getMonthlyData({ date,secondSensor });
-         
+          setDataLoad(false)
+
             setData(response.anyMonthData)
           // let filterdata = response.filter((val) => {
 
@@ -114,6 +121,7 @@ const EventLogFetch = () => {
           // setData(filterdata);
         } else if (period === "weekly") {
           let response = await getWeeklyData({ date,secondSensor });
+          setDataLoad(false)
 
           setData(response.weekData)
           // let filterdata = response.filter((val) => {
@@ -129,12 +137,16 @@ const EventLogFetch = () => {
           // let filterdata = response.filter((val) => {
           //   return val.level_name === secondSensor;
           // })
+          setDataLoad(false)
+
           setData(response.anyDayData);
         } else if (period === "month") {
           let response = await getMonthlyDataLevel({ date,secondSensor });
           // let filterdata = response.filter((val) => {
           //   return val.level_name === secondSensor;
           // })
+          setDataLoad(false)
+
           setData(response.anyMonthData);
 
         } else if (period === "weekly") {
@@ -142,6 +154,8 @@ const EventLogFetch = () => {
           // let filterdata = response.filter((val) => {
           //   return val.level_name === secondSensor;
           // })
+          setDataLoad(false)
+
           setData(response.weeklydata);
         }
       } else if (sensorType == 'QualitySensor') {
@@ -150,6 +164,8 @@ const EventLogFetch = () => {
           // let filterdata = response.filter((val) => {
           //   return val.value_name === secondSensor;
           // })
+          setDataLoad(false)
+
           setData(response.anyDayData);
         }
       } else if (period === "month") {
@@ -157,6 +173,8 @@ const EventLogFetch = () => {
         // let filterdata = response.filter((val) => {
         //   return val.level_name === secondSensor;
         // })
+        setDataLoad(false)
+
         setData(response.anyMonthData);
 
       } else if (period === "weekly") {
@@ -164,6 +182,8 @@ const EventLogFetch = () => {
         // let filterdata = response.filter((val) => {
         //   return val.level_name === secondSensor;
         // })
+        setDataLoad(false)
+
         setData(response.weeklydata);
       }
 
@@ -206,10 +226,16 @@ const EventLogFetch = () => {
         <PickWithType value={date} onChange={getDate} ></PickWithType>
         <Button 
         
-        type="button" class=" py-1 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-16 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+        type="button" class=" py-1 px-2 bg-blue-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-16 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
         
         
         onClick={senddata}>Fetch</Button>
+
+            {dataload?<>
+              <svg class="animate-spin h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9 4.55a8 8 0 0 1 6 14.9m0 -4.45v5h5" />  <path d="M11 19.95a8 8 0 0 1 -5.3 -12.8" stroke-dasharray=".001 4.13" /></svg>
+            Loading...
+            </>:<></>}
+
         <Column {...config}></Column>
       </Card>
 
