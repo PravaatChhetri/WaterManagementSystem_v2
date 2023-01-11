@@ -28,7 +28,10 @@ export default function ValveOptions({
     };
     let response = await fetch(SERVER + "/data/specific", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers:{
+        Authorization: "Bearer " +localStorage.getItem("jwt")
+        
+    },
       body: JSON.stringify(body),
     });
     response = await response.json();
