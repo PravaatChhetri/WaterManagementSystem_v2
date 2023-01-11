@@ -107,6 +107,7 @@ export default function ValveOptions({
       case 'E4':
         setIsSuccess(false)
         setResponseMessage('Security Check Failed')
+        break;
       case 'E5':
         setIsSuccess(false)
         setResponseMessage('MAC frame long error')
@@ -178,21 +179,13 @@ export default function ValveOptions({
 //   }, [mqttClient]);
 
   return (
-    <Card
-      style={{
-        borderRadius: 16,
-        background: "#294c96",
-        minHeight: 500,
-      }}
+    <div
+    className="rounded-md p-3 mt-[110px] w-[90%] mx-auto sm:mt-0 bg-[#294c96] min-h-full"
     >
-      <p className="big_title">Valve</p>
-      <Card
-        style={{
-          borderRadius: 6,
-          minHeight: 300,
-        }}
-      >
+      <p className="text-lg text-white text-center font-bold ">Valve</p>
+      <div className="rounded-sm min-h-[300px] w-[90%] mx-auto mt-5 p-4 bg-white text-black" >
         <Cascader
+          className="mb-10 "
           style={{ width: 150 }}
           options={valveList}
           onChange={(v) => {
@@ -205,49 +198,21 @@ export default function ValveOptions({
           }}
           allowClear={false}
         />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Row>
-          <Col span={12}>
-            <p className="sub_title">Node :</p>
-          </Col>
-          <Col span={12}>
-            <b>{currentValve.node_name}</b>
-          </Col>
-          <Col span={12}>
-            <p className="sub_title">Valve :</p>
-          </Col>
-          <Col span={12}>
-            <b>{currentValve.valve_name}</b>
-          </Col>
-          <Col span={12}>
-            <p className="sub_title">Status :</p>
-          </Col>
-          <Col span={12}>
-            <b>{currentValve.valve_status}</b>
-          </Col>
-          <Col span={12}>
-            <p className="sub_title">Response:</p>
-          </Col>
-          <Col span={12}>
-            <b>{responseMessage}</b>
-          </Col>
-          <Col span={12}>
-            <p className="sub_title">From NODE:</p>
-          </Col>
-          <Col span={12}>
-            <b>{nodeName}</b>
-          </Col>
-          <Col span={12}>
-            <p className="sub_title">Valve percent:</p>
-          </Col>
-          <Col span={12}>
-            <b>{currentValve.valve_percent}</b>
-          </Col>
-        </Row>
-      </Card>
-    </Card>
+        <div className="w-[300px] text-left">
+          <div className="text-base justify-evenly"> Node : <b className="text-right">{currentValve.node_name} </b></div>
+          <div className="text-base"> Valve : <b>{currentValve.valve_name} </b></div>
+          <div className="text-base"> Status : <b>{currentValve.valve_status} </b></div>
+          <div className="text-base"> Response : <b>{responseMessage} </b></div>
+          <div className="text-base"> From Node : <b>{nodeName} </b></div>
+          <div className="text-base"> Valve Percent : <b>{currentValve.valve_percent} </b></div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
   );
 }

@@ -84,25 +84,26 @@ const ValveController = () => {
   });
 
   const valveControllerContent =  (
-    <div style={{ textAlign: "center" }}>
-      <Row gutter={[8, 8]}>
-        <Col span={8}>
-          <ValveOptions
-            currentValve={currentValve}
-            setCurrentValve={setCurrentValve}
-            valveList={valveList}
-            setConfig={setConfig}
-          />
-        </Col>
-        <Col span={16}>
-          <ValveGuage
-            currentValve={currentValve}
-            setCurrentValve={setCurrentValve}
-            node={config}
-          />
-        </Col>
-      </Row>
+    <div
+    className="text-white flex justify-items-center flex-col lg:flex-row gap-2"
+   
+  >
+    <div className="w-full lg:w-[50%]">
+      <ValveOptions
+        currentValve={currentValve}
+        setCurrentValve={setCurrentValve}
+        valveList={valveList}
+        setConfig={setConfig}
+      />
     </div>
+    <div className="w-full">
+      <ValveGuage
+        currentValve={currentValve}
+        setCurrentValve={setCurrentValve}
+        node={config}
+      />
+    </div>
+  </div>
   );
 
   // (<div>ValveController</div>);

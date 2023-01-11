@@ -129,68 +129,26 @@ export default function ValveGuage({
   };
 
   return (
-    <>
-      <Card
-        style={{
-          borderRadius: 16,
-          background: "#294c96",
-          minHeight: 60,
-        }}
-      >
-        <span className="big_title">Valve Guage</span>
-      </Card>
-      <Card
-        style={{
-          borderRadius: 16,
-          marginTop: 10,
-          background: "#294c96",
-          minHeight: 410,
-        }}
-      >
-        <Row justify="space-evenly" gutter={[16, 16]}>
-          <Col span={24}>
-            <Gauge {...config} height={200} width={300} />
-          </Col>
-          <Col span={24}>
-            <Row justify="space-evenly">
-              <Col>
-                <Button
-                  style={{
-                    width: 100,
-                    background: "#db5f51",
-                    border: "none",
-                  }}
-                  onClick={handleDecrement}
-                  icon={<DownOutlined />}
-                />
-              </Col>
-              <Col>
-                <Button
-                  style={{
-                    width: 100,
-                    background: "#59d681",
-                    border: "none",
-                  }}
-                  onClick={handleValve}
-                >
-                  Turn Valve
-                </Button>
-              </Col>
-              <Col>
-                <Button
-                  style={{
-                    width: 100,
-                    background: "#59d681",
-                    border: "none",
-                  }}
-                  onClick={handleIncrement}
-                  icon={<UpOutlined />}
-                />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-    </>
+    <div className="w-[90%] mx-auto ">
+    <div className=" rounded-md py-3 bg-[#294c96] min-h-[60px]">
+      <h1 className="text-white text-center font-bold text-lg"> Valve Gauge</h1>
+    </div>
+    <div className="rounded-md mt-3 p-5 bg-[#294c96] min-h-[420px]">
+      <div>
+        <div>
+        <Gauge {...config} height={200} width={300} />
+        <div className="flex justify-center mt-10">
+        
+                <button className="w-[50px] bg-white text-black rounded-full" onClick={handleDecrement} ><DownOutlined/></button>
+                 <button className="text-center text-xl text-white font-bold px-5 align-middle">Turn Valve</button>
+                <button className="w-[50px] h-[50px] bg-white text-black rounded-full" onClick={handleIncrement} ><UpOutlined/></button>
+
+        </div>
+        </div>
+      </div>
+
+    </div>
+     
+    </div>
   );
 }
