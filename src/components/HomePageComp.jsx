@@ -45,11 +45,10 @@ export const Header = (props) => {
 // Dash Home page components
 export const TankLevel = ({ data }) => {
   return (
-    <Grid lg={6} className="flex justify-evenly">
+    <Grid lg={6} className="flex justify-around">
       <Row>
-        <Col span={4}></Col>
 
-        <Col span={24}>
+        <Col>
           <Row>
             {data.map((val, i) => {
               return (
@@ -68,7 +67,7 @@ export const TankLevel = ({ data }) => {
                       },
                     }}
                   />
-                  <p className="sub_title">{val.level_name}</p>
+                  <p className="sub_title text-center">{val.level_name}</p>
                 </Col>
               );
             })}
@@ -90,7 +89,7 @@ export const FlowRateDisplay = ({ data }) => {
                 <Card
                   hoverable
                   style={{
-                    backgroundColor: val.flow_rate < 5 ? "#e31305" : "#55c704",
+                    backgroundColor: val.flow_rate < 5 ? "#d1330a" : "#0b9406",
 
                     width: 130,
 
@@ -181,7 +180,7 @@ export const WaterQuality = ({ data }) => {
                 hoverable
                 className=""
                 style={{
-                  backgroundColor: "#10b4eb",
+                  backgroundColor: "#00437A",
 
                   width: 130,
                   height: 85,
