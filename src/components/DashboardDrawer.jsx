@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{useContext} from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -22,12 +22,15 @@ import PersonIcon from "@mui/icons-material/Person";
 import ScienceIcon from "@mui/icons-material/Science";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Header } from "./HomePageComp";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import {UserContex} from '../App'
 
 
 const drawerWidth = 280;
 
 export const ResponsiveDrawer = (props) => {
+
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -39,7 +42,7 @@ export const ResponsiveDrawer = (props) => {
     <ScienceIcon />,
     <NotificationsActiveIcon />,
     <TimelineIcon />,
-    <PersonIcon />,
+    <PersonIcon  />,
   ];
   //state used for changing light and dark mode
  //defining the dark and light mode theme
@@ -53,6 +56,18 @@ export const ResponsiveDrawer = (props) => {
   });
 
   
+  const {state, dispatch}= useContext(UserContex)
+
+
+  const history = useNavigate()
+
+
+  const Logout = ()=>{
+    localStorage.clear()
+    dispatch({type:"CLEAR"})
+    history('/login')
+}
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -92,19 +107,40 @@ export const ResponsiveDrawer = (props) => {
           },
           { title: "Alarms and Events", path: "/Dashboard/Alarms-and-Events" },
           { title: "Event Log", path: "/Dashboard/Event-Log" },
-          { title: "Log Out", path: "/Dashboard/Log-Out" },
-        ].map((text, index) => (
-          <ListItem key={text}>
+          // { title: "Log Out", path: "/Dashboard/Log-Out" },
+        ].map((text, index) =>
+        
+        (
+          <ListItem key={text}
+          >
             <Link to={text.path}>
-              <ListItemButton className="text-black">
+              <ListItemButton className="text-black"
+              
+              
+              >
                 <ListItemIcon>{icon[index]}</ListItemIcon>
-                <ListItemText primary={text.title} />
+                <ListItemText  primary={text.title}  />
               </ListItemButton>
             </Link>
           </ListItem>
         ))}
+
       </List>
-   
+
+
+      <button type="button" class="py-2 px-4 flex justify-center items-center  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+      
+      onClick={()=>{Logout()}}                           
+      
+      >
+    <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+    Log Out
+</button>
+
+           {/* <h1
+           onClick={()=>Logout()}
+           >LOGOUT</h1> */}
+
     </div>
   );
 

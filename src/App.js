@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useContext ,createContext, useReducer} from 'react';
 import Home from './pages/Home';
 import Login from './pages/Login';
 // import SignupPage from './pages/Signup';
@@ -11,11 +11,13 @@ import ValveController from './pages/ValveController';
 import AlarmEvents from './pages/AlarmEvents';
 import EventLog from './pages/EventLog';
 import WaterFlowDisplay from './pages/WaterFlowDisplay';
+import {reducer,initialState} from "./reducers/userReducer"
 import ResponsiveDrawer from './components/DashboardDrawer';
-import { useState } from 'react';
+export const UserContex = createContext()
 
 function App() {
-  
+  const [state, dispatch] = useReducer(reducer,initialState)
+
   const [isLoggedIn, setisLoggedIn] = useState(null);
   const logIn = () => {
     setisLoggedIn(true);
@@ -24,8 +26,12 @@ function App() {
     setisLoggedIn(false);
   };
   
+  
+  
   return (
     <>
+        <UserContex.Provider value={{state,dispatch}}>
+
       <Router>
         {isLoggedIn ? (
         <button onClick={logOut}>Logout</button>
@@ -48,6 +54,8 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      </UserContex.Provider>
+
     </>
   );
 }
