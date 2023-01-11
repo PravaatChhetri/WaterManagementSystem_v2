@@ -215,6 +215,7 @@ export const ResponsiveDrawer = (props) => {
           component="main"
           sx={{
             mt: { sm:16 },
+            
             flexGrow: 1,
             pt: 3,
             pr:3,
