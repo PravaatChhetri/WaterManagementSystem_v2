@@ -85,7 +85,7 @@ const ValveController = () => {
 
   const valveControllerContent =  (
     <div
-    className="text-white flex justify-items-center flex-col lg:flex-row gap-2"
+    className="text-white flex justify-items-center w-full flex-col lg:flex-row gap-2"
    
   >
     <div className="w-full lg:w-[50%]">
