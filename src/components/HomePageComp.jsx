@@ -8,11 +8,11 @@ export const Header = (props) => {
   const imageSize = "8%";
   return (
     <div
-    className="flex flex-wrap content-center justify-center"
+    className="flex flex-wrap content-center justify-evenly"
     >
       {}
       <img src={desu} height={imageSize} width={imageSize} alt="desu" />
-      <h1 className="text-sm md:text-2xl font-bold">
+      <h1 className="text-sm md:text-2xl font-bold align-middle">
         Gyelpozhing Water Management System
       </h1>
       <img src={rGlogo} height={imageSize} width={imageSize} alt="rGlogo" />

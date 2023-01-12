@@ -64,8 +64,7 @@ const EventLogFetch = () => {
 
   const config = {
     data,
-    width: 1000,
-    height: 600,
+   
     autoFit: true,
     xField: 'createdAt',
     xAxis: {
@@ -194,19 +193,17 @@ const EventLogFetch = () => {
 
   }
 
-  return (<>
+  return (
   
 
-  <>
-      <Card
-        style={{
-          borderRadius: 16,
-          padding: 12,
-          minHeight: 330,
-        }}
-      >
-        <h1>Select Date</h1>
 
+      <div
+  className="  sm:min-h-[330px] mt-[130px] sm:mt-0 rounded-xl p-7 bg-[#f3f3f1] mx-2 "
+      >
+        <div className="flex flex-col lg:flex-row">
+        <h1 className="text-center" >Select Date</h1>
+
+        <div className="flex justify-evenly">
         <Select value={period} style={{ width: 120, }} onChange={setPeriod}>
           <Option value="anyday">Any Date</Option>
           <Option value="weekly">Weekly</Option>
@@ -217,6 +214,9 @@ const EventLogFetch = () => {
             <Option key={sensor}>{sensor}</Option>
           ))}
         </Select>
+        </div>
+        <div className="flex justify-center">
+
         <Select value={secondSensor} style={{ width: 140, }} onChange={OnSecondSensorChange}>
           {sensor.map((sensor) => (
             <Option key={sensor}>{sensor}</Option>
@@ -224,6 +224,7 @@ const EventLogFetch = () => {
         </Select>
 
         <PickWithType value={date} onChange={getDate} ></PickWithType>
+        </div>
         <Button 
         
         type="button" class=" py-1 px-2 bg-blue-600 hover:bg-indigo-500 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-16 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
@@ -235,15 +236,17 @@ const EventLogFetch = () => {
               <svg class="animate-spin h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9 4.55a8 8 0 0 1 6 14.9m0 -4.45v5h5" />  <path d="M11 19.95a8 8 0 0 1 -5.3 -12.8" stroke-dasharray=".001 4.13" /></svg>
             Loading...
             </>:<></>}
-
+        </div>
+        <div className="flex flex-wrap w-full">
         <Column {...config}></Column>
-      </Card>
+        </div>
+      </div>
 
-    </>
+    
   
   
   
-  </>);
+);
 };
 
 export default EventLogFetch;
