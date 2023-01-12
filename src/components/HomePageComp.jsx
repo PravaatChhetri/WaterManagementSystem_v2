@@ -59,7 +59,7 @@ export const TankLevel = ({ data }) => {
 
 export const FlowRateDisplay = ({ data }) => {
   return (
-    <Grid lg={6} className="p-3">
+    <Grid lg={6} className="pl-6 pr-3 py-3 ">
       <h1 className="text-2xl font-bold text-center text-[#434243]">Flow Rate Display</h1>
       <div className="flex flex-wrap justify-start content-start gap-2">
         {data.map((val, i) => {

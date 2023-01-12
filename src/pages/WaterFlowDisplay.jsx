@@ -5,7 +5,6 @@ import TankLevel from "./tankLevel";
 import WaterLoss from "./waterLoss";
 // import WaterQuality from "./waterQuality";
 import WaterQuality from "./waterQuality";
-import { Col, Row } from "antd";
 
 const WaterFlowDisplay = () => {
     
@@ -273,23 +272,19 @@ const WaterFlowDisplay = () => {
 }, []);
 
 const waterFlowDisplayContent=   (
-    <div>
-      <Row gutter={[8, 8]}>
-        <Col span={8}>
-          <Row gutter={[8, 8]}>
-            <Col span={24}>
-              <FlowMeterDisplay data={FlowRateData} />
-            </Col>
-            <Col span={24}>
+    <div className="flex flex-row lg:grid-cols-3 h-full flex-wrap p-3 ml-3 gap-2">
+      <div className="flex flex-col mt-[95px] sm:mt-0 w-[90%] lg:w-[35%]">
+        <div className="mb-3">
+        <FlowMeterDisplay data={FlowRateData} />
+        </div>
+        <div>
               <WaterLoss data={{}} />
-            </Col>
-          </Row>
-        </Col>
-        <Col span={16}>
+        </div>
+      </div>
+      <div className="w-[90%] lg:w-[60%]">
           <TankLevel data={TankData} />
           <WaterQuality data={qualityStatusData} />
-        </Col>
-      </Row>
+      </div>
     </div>
   );
 
