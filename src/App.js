@@ -18,7 +18,7 @@ export const UserContex = createContext()
 function App() {
   const [state, dispatch] = useReducer(reducer,initialState)
 
-  const [isLoggedIn, setisLoggedIn] = useState(null);
+  const [isLoggedIn, setisLoggedIn] = useState(true);
   const logIn = () => {
     setisLoggedIn(true);
   };
